@@ -14,12 +14,12 @@
     </thead>
     <tbody>
     <tr th:if="${users.empty}">
-        <td colspan="2"> No Userss Available </td>
+        <td colspan="2"> No Users Available </td>
     </tr>
     <tr th:each="user : ${users}">
         <td><span th:text="${user.login}"> Login </span></td>
         <td><span th:text="${user.roles}"> Role </span></td>
-        <td><a href="@{/user/${user.id}}">edit</a></td>
+        <td><a  th:href="@{/user/{id}(id=${user.id})}">edit</a></td>
 
     </tr>
     </tbody>
